@@ -1,4 +1,4 @@
-# APIs
+# Geoeye-server APIs old
 
 ## /
 - / `GET`

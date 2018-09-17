@@ -8,6 +8,7 @@
 * CSS
 
 * JavaScript
+  * [JS里的数据类型](javascript/JS里的数据类型.md) 
   * [lodash](javascript/lodash.md)
 
 * Node.js
@@ -20,6 +21,7 @@
 * Tools
 
 * Work
-  * [geoeye-server-api](work/geoeye-server-api.md)
+  * [geoeye server api old](work/geoeye-server-api.md)
+  * [geoeye server api new](work/geoeye-server-api-new.md)
 
 * [结束语](end.md)
