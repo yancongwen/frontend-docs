@@ -48,4 +48,5 @@ Symbol 值通过Symbol函数生成。凡是属性名属于 Symbol 类型，就�
 | 类型 |string | number | boolean | symbol | undefined | null | object | function |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | typeof的值 | 'string' | 'number' | 'boolean' | 'symbol' | 'undefined' | 'object' | 'object' | 'function' |
+
 注意 function 并不是一个类型
