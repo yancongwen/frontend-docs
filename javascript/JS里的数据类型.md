@@ -1,5 +1,6 @@
 # JS中的数据类型
-七种：`number`、`string`、 `boolean`、 `undefined`、 `null`、 `object`、 `symbol`、
+七种：`number`、`string`、 `boolean`、 `undefined`、 `null`、 `object`、 `symbol`    
+没有 array 噢
 
 ## number
 - 整数和小数：`1`、 `1.1`、 `.1`
@@ -15,9 +16,13 @@
      var s = `12345
     67890` // 含回车符号
     ```
+- Base64
+    - Base64是网络上最常见的用于传输8Bit字节码的编码方式之一，Base64就是一种基于64个可打印字符来表示二进制数据的方法;Base64编码是从二进制到字符的过程，可用于在HTTP环境下传递较长的标识信息。
+    - 编码方法：`window.btoa("test")；//"dGVzdA=="`
+    - 解码方法：`window.atob("dGVzdA==");//"test"`
 
 ## boolean
-没什么可说的
+true or false
 
 ## undefined 和 null
 都可以表示“没有”，含义非常相似      
@@ -27,8 +32,7 @@
 - `undefined == null  //true`
 
 ## object
-- `object` 就是几种基本类型（无序地）组合在一起
-- `object` 里面可以有 `object`
+- `object` 就是几种基本类型（无序地）组合在一起,可以无限嵌套
 - `object` 的 key 一律是字符串，不存在其他类型的 key（ES6中也可以是 Symbol类型的）
 - `object['']` 是合法的
 - `object['key']` 可以写作 `object.key`
