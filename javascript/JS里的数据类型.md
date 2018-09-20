@@ -20,10 +20,11 @@
 没什么可说的
 
 ## undefined 和 null
-都表示没有值  
-
+都可以表示“没有”，含义非常相似      
 - （规范）如果一个变量没有被赋值，那么这个变量的值就是 `undefiend`
 - （习俗）如果你想表示一个还没赋值的对象，就用 `null`。如果你想表示一个还没赋值的字符串/数字/布尔/symbol，就用 `undefined`（但是实际上你直接 `var xxx` 一下就行了，不用写 `var xxx = undefined`）
+- `null`是一个表示“空”的对象，转为数值时为0；`undefined`是一个表示"此处无定义"的原始值，转为数值时为`NaN`
+- `undefined == null  //true`
 
 ## object
 - `object` 就是几种基本类型（无序地）组合在一起
@@ -43,5 +44,7 @@ Symbol 值通过Symbol函数生成。凡是属性名属于 Symbol 类型，就�
 
 | 类型 |string | number | boolean | symbol | undefined | null | object | function |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| typeof的值 | 'string' | 'number' | 'boolean' | 'symbol' | 'undefined' | 'object' | 'object' | 'function' |
-注意 function 并不是一个类型
+| typeof的值 | 'string' | 'number' | 'boolean' | 'symbol' | 'undefined' | 'object' | 'object' | 'function' |  
+
+1、注意 function 并不是一个类型;    
+2、null的类型是object，这是由于历史原因造成的。1995年的 JavaScript 语言第一版，只设计了五种数据类型（对象、整数、浮点数、字符串和布尔值），没考虑null，只把它当作object的一种特殊值。后来null独立出来，作为一种单独的数据类型，为了兼容以前的代码，typeof null返回object就没法改变了。
