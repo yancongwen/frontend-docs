@@ -1,6 +1,6 @@
 # JS中的数据类型
 七种：`number`、`string`、 `boolean`、 `undefined`、 `null`、 `object`、 `symbol`    
-没有 array 噢
+没有 array 
 
 ## number
 - 整数和小数：`1`、 `1.1`、 `.1`
