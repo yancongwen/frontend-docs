@@ -22,7 +22,8 @@
 * Vue
 
 * Tools
-
+  * [git commit 规范化](tools/git提交信息规范化.md)
+  
 * Work
   * [geoeye server api old](work/geoeye-server-api.md)
   * [geoeye server api new](work/geoeye-server-api-new.md)
