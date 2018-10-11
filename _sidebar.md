@@ -20,6 +20,7 @@
   * [packages](node/packages.md)
 
 * Vue
+  * [Vue CLI 3 配置](vue/vue-cli3.md)
 
 * Tools
   * [git commit 规范化](tools/git提交信息规范化.md)
