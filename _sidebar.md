@@ -10,9 +10,12 @@
 * JavaScript
   * [JS里的数据类型](javascript/JS里的数据类型.md) 
   * [JS数据类型转换](javascript/JS数据类型转换.md) 
+  * [JS Array](javascript/array.md) 
+  * [JS Function](javascript/function.md) 
   * [原型与原型链](javascript/原型与原型链.md) 
   * [构造函数](javascript/构造函数.md) 
   * [lodash](javascript/lodash.md)
+  * [jQuery](javascript/jquery.md)
 
 * Node.js
   * [express](node/express.md)
