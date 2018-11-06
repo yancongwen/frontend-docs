@@ -6,6 +6,7 @@
 * HTML
 
 * CSS
+  * [CSS实现多行文字截断](css/CSS实现多行文字截断.md)
 
 * JavaScript
   * [JS里的数据类型](javascript/JS里的数据类型.md) 
