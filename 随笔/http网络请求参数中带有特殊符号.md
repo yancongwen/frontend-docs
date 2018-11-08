@@ -1,7 +1,7 @@
 # http网络请求参数中带有特殊符号相关问题
 
 ## GET 请求参数中带有空格
-请求参数中带有空格会被处理为`+`号。这是`HTML4`标准中定义的，请看这里[Form content types](https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1)。
+请求参数中带有空格会被处理为`+`号。这是 `HTML4` 标准中定义的，请看这里[Form content types](https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1)。
 在`HTTP`请求头中，首部字段`Content-type`用于指示资源的MIME类型，规定了提交表单元素时对数据的处理方式。下面是几个常见的值：       
 1.text/html     
 2.text/plain    
