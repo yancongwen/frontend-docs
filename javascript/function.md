@@ -1,7 +1,7 @@
 # JavaScript 中的函数
 
 ## 函数的五种声明方式
-```
+```javascript
 // 方式1
 function f1(x,y){
     return x+y;

@@ -2,7 +2,7 @@
 
 # Personal Frontend Summary <small>personal</small>
 
-> 个人 Web 开发学习总结
+> 个人 Web 开发技术总结
 
 [GitHub](https://github.com/yancongwen/frontend-docs/)
 [Start](/README)

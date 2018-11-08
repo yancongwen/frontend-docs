@@ -1,12 +1,6 @@
 <!-- docs/_sidebar.md -->
 
 * [概述](README.md)
-* [Quick Start](quickstart.md)
-
-* HTML
-
-* CSS
-  * [CSS实现多行文字截断](css/CSS实现多行文字截断.md)
 
 * JavaScript
   * [JS里的数据类型](javascript/JS里的数据类型.md) 
@@ -17,6 +11,12 @@
   * [构造函数](javascript/构造函数.md) 
   * [lodash](javascript/lodash.md)
   * [jQuery](javascript/jquery.md)
+  * [DOM 事件基础](javascript/dom事件.md)
+
+* HTML
+
+* CSS
+  * [CSS实现多行文字截断](css/CSS实现多行文字截断.md)
 
 * Node.js
   * [express](node/express.md)

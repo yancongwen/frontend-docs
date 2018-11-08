@@ -8,17 +8,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" disabled>
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/dark.css" title="dark" disabled>
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/buble.css" title="buble" disabled>
-  <link rel="stylesheet" href="//unpkg.com/prismjs@1.15.0/themes/prism-dark.css">
+  <link rel="stylesheet" href="//unpkg.com/docsify-themeable/dist/css/theme-simple-dark.css">
   <style>
-  nav.app-nav li ul {
-    min-width: 100px;
-  }
-  .markdown-section>h1:first-child {
-    display: none;
-  }
+    nav.app-nav li ul {
+      min-width: 100px;
+    }
+    .markdown-section>h1:first-child {
+      display: none;
+    }
+    ::-webkit-scrollbar {
+      display: inline-block;
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(28,70,100,0);
+      border-radius: 4px;
+    }
+    :hover::-webkit-scrollbar-thumb {
+      background-color: rgba(28,70,100,1);
+      border-radius: 4px;
+    }
   </style>
 </head>
 
@@ -52,10 +67,13 @@
     ]
   }
   </script>
-  <script src="//unpkg.com/docsify/lib/docsify.js"></script>
+  <!-- docsify -->
+  <script src="https://unpkg.com/docsify/lib/docsify.min.js"></script>
+  <!-- docsify-themeable -->
+  <script src="https://unpkg.com/docsify-themeable"></script>
   <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
   <script src="//unpkg.com/docsify-copy-code"></script>
-  <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+  <!-- <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script> -->
 </body>
 
 </html>

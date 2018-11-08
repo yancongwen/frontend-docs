@@ -8,7 +8,7 @@
 jQuery 的基本设计思想和主要用法，就是"选择某个网页元素，然后对其进行某种操作"。使用 jQuery 的第一步，往往就是将一个选择表达式，放进构造函数 jQuery()（简写为$），得到被选中的元素，选中的元素可能是一个，也可能是多个。第二步就是对这些元素进行一系列操作，例如添加class、移除class、取值和赋值、移动等。 jQuery的一大特点就是支持链式操作，即类似于这样`$('div').find('h3').eq(2).html('Hello');`,将一系列操作连接在一起。它的原理在于每一步的jQuery操作，返回的都是一个jQuery对象，所以不同操作可以连在一起。
 
 ## 3、自己实现一个简单的 jQuery
-```JavaScript
+```javascript
 window.jQuery = function(nodeOrSelector) {
   var nodes = {};
   if (typeof nodeOrSelector === 'string') {
@@ -47,10 +47,10 @@ $('ul>li').setText('Hello jQuery');
 
 ## 4、jQuery获取DOM和JS选择器获取的DOM的区别与联系
 例如：
-```HTML
+```html
 <div id='x'></div>
 ```
-```JavaScript
+```javascript
 var div = document.getElementById('x')
 var $div = $('#x')
 ```
