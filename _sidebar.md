@@ -13,10 +13,8 @@
   * [jQuery](javascript/jquery.md)
   * [DOM 事件基础](javascript/dom事件.md)
 
-* HTML
-
-* CSS
-  * [CSS实现多行文字截断](css/CSS实现多行文字截断.md)
+* HTML && CSS
+  * [CSS实现多行文字截断](html&css/CSS实现多行文字截断.md)
 
 * Node.js
   * [express](node/express.md)
@@ -25,22 +23,29 @@
 
 * Vue
   * [Vue CLI 3 配置](vue/vue-cli3.md)
+  * [Vue Router](vue/vue-router.md)
+  * [Vuex](vue/vuex.md)
+  * [Vue 之自定义事件](vue/vue之自定义事件.md)
 
-* Tools
-  * [git commit 规范化](tools/git提交信息规范化.md)
-  
-* Work
-  * [geoeye server api old](work/geoeye-server-api.md)
-  * [geoeye server api new](work/geoeye-server-api-new.md)
+* WebDev Summary
+  * [路径问题](webdev_summary/路径.md)
+  * [http网络请求参数中带有特殊符号](webdev_summary/http网络请求参数中带有特殊符号.md)
+  * [缓存(cache)](webdev_summary/cache.md)
+  * [浏览器渲染过程](webdev_summary/浏览器渲染过程.md)
 
-* 随笔
-  * [路径问题](随笔/路径.md)
-  * [http网络请求参数中带有特殊符号](随笔/http网络请求参数中带有特殊符号.md)
-
-* 算法
-  * [寻找最长回文字符串](算法/寻找最长回文字符串.md)
+* Datas Sructure && Algorithm
+  * [寻找最长回文字符串](datastructure_algorithm/寻找最长回文字符串.md)
 
 * GIS
   * [四大WebGIS地图引擎的对比选择](gis/四大webgis地图引擎的对比选择.md)
+
+* Tools
+  * [git commit 规范化](tools/git提交信息规范化.md)
+
+* Work
+  * [geoeye server api old](work/geoeye-server-api.md)
+
+* 随笔
+  * [Todo](随笔/todo.md)
 
 * [结束语](end.md)
