@@ -1,6 +1,6 @@
 # JavaScript 中的函数
 
-## 函数的五种声明方式
+## 1、函数的五种声明方式
 ```javascript
 // 方式1
 function f1(x,y){
@@ -24,12 +24,11 @@ f4.name === "anonymous" //匿名的
 var f5 = (x,y) => x+y
 f5.name === "f5"
 ```
-
-
-- 如何调用函数 f.call
-- this 和 arguments
-- 什么是 call stack
-- 作用域
-- 闭包
+## 2、this
+## 3、arguments
+## 4、什么是 call stack
+## 5、作用域
+## 6、call、apply、bind 三者的用法
+## 7、什么是闭包，闭包的用途是什么？
 
 

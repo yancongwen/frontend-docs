@@ -18,3 +18,8 @@
 - 目前知道的伪数组有:
     - 函数的`arguments`对象；
     - `document.querySelectorAll('div')` 返回的节点的集合[NodeList](https://developer.mozilla.org/zh-CN/docs/Web/API/NodeList)；
+
+## 数组去重
+> **经典的一个面试题目**：如何实现数组去重？假设有数组 `array = [1,5,2,3,4,2,3,1,3,4]`你要写一个函数 `unique`，使得 `unique(array)` 的值为 `[1,5,2,3,4]`。要求：不要做多重循环，只能遍历一次；请给出两种方案，一种能在 ES 5 环境中运行，一种能在 ES 6 环境中运行。
+
+
