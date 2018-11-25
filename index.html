@@ -22,17 +22,21 @@
     ::-webkit-scrollbar {
       display: inline-block;
       width: 8px;
-      height: 10px;
+      height: 12px;
     }
     ::-webkit-scrollbar-track {
       background: transparent;
     }
     ::-webkit-scrollbar-thumb {
-      background-color: rgba(28,70,100,0);
+      background-color: transparent;
       border-radius: 4px;
+      cursor: pointer;
     }
     :hover::-webkit-scrollbar-thumb {
       background-color: rgba(28,70,100,1);
+    }
+    ::-webkit-scrollbar-thumb:horizontal {
+      border-radius: 0;
     }
   </style>
 </head>
