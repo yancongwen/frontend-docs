@@ -52,7 +52,7 @@ js 中的 `this` 和 java、C# 中的类似，表示函数据以执行的的环�
     ```
 
 - **arguments** 与 **callee**    
-`arguments` 是一个伪数组对象，包含着传入函数中的所有参数。虽然 它的主要用途是保存函数参数，但这个对象还有一个 `callee` 属性，该属性是一个指针，指向拥有这个 `arguments` 对象的函数。    
+`arguments` 是一个伪数组对象，包含着传入函数中的所有参数。虽然它的主要用途是保存函数参数，但这个对象还有一个 `callee` 属性，该属性是一个指针，指向拥有这个 `arguments` 对象的函数。    
 下面是阶乘函数的定义，用到了递归，使用 `callee` 很好的避免了函数内部的耦合：
 ```javascript
 function factorial(num) {

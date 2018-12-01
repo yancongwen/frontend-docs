@@ -34,6 +34,7 @@
   * [缓存(cache)](webdev_summary/cache.md)
   * [浏览器渲染过程](webdev_summary/浏览器渲染过程.md)
   * [移动端适配](webdev_summary/移动端适配.md)
+  * [跨域及常见解决方案](webdev_summary/跨域及常见解决方案.md)
 
 * Datas Sructure && Algorithm
   * [寻找最长回文字符串](datastructure_algorithm/寻找最长回文字符串.md)

@@ -2,16 +2,17 @@
 
 ## GET 请求参数中带有空格
 请求参数中带有空格会被处理为`+`号。这是`HTML4`标准中定义的，请看这里[Form content types](https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1)。
-在`HTTP`请求头中，首部字段`Content-type`用于指示资源的MIME类型，规定了提交表单元素时对数据的处理方式。下面是几个常见的值：       
-1.text/html     
-2.text/plain    
-3.text/css  
-4.text/javascript   
-5.application/x-www-form-urlencoded 
-6.multipart/form-data   
-7.application/json  
-8.application/xml   
-...         
+在`HTTP`请求头中，首部字段`Content-type`用于指示资源的MIME类型，规定了提交表单元素时对数据的处理方式。下面是几个常见的值：
+```
+1.text/html
+2.text/plain
+3.text/css
+4.text/javascript
+5.application/x-www-form-urlencoded
+6.multipart/form-data
+7.application/json
+8.application/xml
+```
 其中`application/x-www-form-urlencoded`是默认值，使用该值时，提交表单时内容会按照如下规则编码：空格转换为`+`号；非法字符转换为类似于`%E0`的两位16进制表示的ASCII码；换行符被转换为`CR LF`；数据项名称和数据值以`=`号分割，数据项与数据项之间以`&`分割；.......      
 按照以上规则，在`GET`请求中，我们的请求参数会按照以上编码规则进行编码，然后拼接到请求`URL`后面。
 例如：
