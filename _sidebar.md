@@ -13,6 +13,7 @@
   * [lodash](javascript/lodash.md)
   * [jQuery](javascript/jquery.md)
   * [DOM 事件基础](javascript/dom事件.md)
+  * [JS 运行机制及 Event Loop](javascript/EventLoop.md)
 
 * HTML && CSS
   * [CSS实现多行文字截断](html&css/CSS实现多行文字截断.md)
@@ -42,9 +43,13 @@
 
 * GIS
   * [四大WebGIS地图引擎的对比选择](gis/四大webgis地图引擎的对比选择.md)
+  * [解决WFS矢量要素重复加载问题](gis/解决WFS矢量要素重复加载问题.md)
+  * [Geoserver中WFS服务的使用](gis/Geoserver中WFS服务的使用.md)
 
 * Tools
   * [git commit 规范化](tools/git提交信息规范化.md)
+  * [git相关](tools/git相关.md)
+  * [webpack](tools/webpack.md)
 
 * Work
   * [geoeye server api old](work/geoeye-server-api.md)
