@@ -1,4 +1,4 @@
-# JavaScript 中的函数
+# JavaScript 之 Function
 
 ## 1、函数的五种声明方式
 ```javascript

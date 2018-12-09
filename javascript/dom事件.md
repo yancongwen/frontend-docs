@@ -23,6 +23,19 @@ IE的事件流是冒泡, 从里面往上面冒, netscape是从外部元素往内
 
 ## 3、事件对象
 
+## 4、几个不常用的事件
+```js
+// 禁止显示右键选项
+document.oncontextmenu=function(e){return false}
+// 禁止选择
+document.onselectstart=function(e){return false}
+// 禁止粘贴 
+document.onpaste=function(e){return false}
+// 禁止复制 
+document.oncopy=function(e){return false}
+// 禁止剪切 
+document.oncut=function(e){return false}
+```
 
 ## 参考
 - [[解惑]JavaScript事件机制](http://www.cnblogs.com/hustskyking/p/problem-javascript-event.html)

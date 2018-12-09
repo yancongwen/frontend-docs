@@ -5,6 +5,7 @@
 * JavaScript
   * [JS里的数据类型](javascript/JS里的数据类型.md) 
   * [JS数据类型转换](javascript/JS数据类型转换.md) 
+  * [JS String](javascript/string.md) 
   * [JS Array](javascript/array.md) 
   * [JS Function](javascript/function.md) 
   * [原型与原型链](javascript/原型与原型链.md) 
