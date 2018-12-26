@@ -42,8 +42,8 @@ var bool = Array.isArray(value);
 ```
 
 ## 3. 转换方法：toLocaleString()、toString()、valueOf()、join()
-- `toString()`：返回由数组中每个值的字符串形式拼接而成的一个以逗号分隔的字符串，为了创建这个字符串，会调用每一项的toString()方法；
-- `toLocaleString()`：返回由数组中每个值的字符串形式拼接而成的一个以逗号分隔的字符串，为了创建这个字符串，会调用每一项的toLocaleString()方法；
+- `toString()`：返回由数组中每个值的字符串形式拼接而成的一个以逗号分隔的字符串，为了创建这个字符串，会调用每一项的 toString 方法；
+- `toLocaleString()`：返回由数组中每个值的字符串形式拼接而成的一个以逗号分隔的字符串，为了创建这个字符串，会调用每一项的 toLocaleString 方法；
 - `valueOf()`：返回的还是数组；
 - `join()`：可以使用不同的分隔符来构建数组字符串；
 
@@ -52,8 +52,8 @@ var bool = Array.isArray(value);
 - `pop()`：末尾删除
 - `shift()`：前端移除
 - `unshift()`：前端添加
-- `栈`：后进先出 (LIFO)，栈中项的操作只发生在一个位置——栈的顶部。可使用push()、pop()实现。
-- `队列`：先进先出 (FIFO)，末尾添加、前端移除。可使用push()、shift()实现。
+- `栈`：后进先出 (LIFO)，栈中项的操作只发生在一个位置——栈的顶部。可使用 push、pop 实现。
+- `队列`：先进先出 (FIFO)，末尾添加、前端移除。可使用 push、shift 实现。
 
 ## 5. 重排序方法：reverse()、sort()
 - `reverse()`：反转
@@ -63,13 +63,13 @@ var bool = Array.isArray(value);
 var array = [1,2,3,4,5];
 array.reverse();  //[5,4,3,2,1]
 ```
-在上面的例子,reserse()方法直观明了，但不够灵活，不能满足我们自定义排序规则的需求。因此才有了sort()方法。sort()方法默认按照升序排列。为了实现排序，该方法会自动调用每个数组项的toString()方法，比较字符串进行排序。如：
+在上面的例子, reserse 方法直观明了，但不够灵活，不能满足我们自定义排序规则的需求。因此才有了 sort 方法。 sort 方法默认按照升序排列。为了实现排序，该方法会自动调用每个数组项的 toString 方法，比较字符串进行排序。如：
 ```js
 var array = [0,1,5,10,15];
 var result = array.sort(); //[0,1,10,15,5]
 //在这里会得到意外的结果，因为并不是按照数字比较的
 ```
-sort()方法强大之处在于其可以接受一个 **比较函数作为参数**，从而实现我们自定义排序规则。比较函数接收两个参数，表示的是数组中的两项，暂用a,b表示，如果a应该位于b之前,则返回一个负数（表示不用交换位置）；如果a应该位于b之后,则返回一个正数（表示需要交换位置）；如果a等于b，则返回0。例：
+sort 方法强大之处在于其可以接受一个 **比较函数作为参数**，从而实现我们自定义排序规则。比较函数接收两个参数，表示的是数组中的两项，暂用 a, b 表示，如果 a 应该位于 b 之前,则返回一个负数（表示不用交换位置）；如果 a 应该位于 b 之后,则返回一个正数（表示需要交换位置）；如果 a 等于 b，则返回 0。例：
 ```js
 function compare(a,b){
     if(a<b){
@@ -89,7 +89,7 @@ function compare(a,b){
 }
 ```
 通过以上形式，可以实现更复杂的排序效果。\
-reverse() 和 sort() 方法操作数组本身，返回值是经过排序后的数组。
+reverse 和 sort 方法操作数组本身，返回值是经过排序后的数组。
 
 ## 6. 操作方法：concat()、slice()、splice()
 - `concat()`：合并数组，不影响原数组\
@@ -100,7 +100,7 @@ var colors2 = colors1.concat('yellow',['blue','black']);
 //colors2 = ['red','green','yellow','blue','black']
 ```
 - `slice()`：剪切数组，不影响原数组\
-slice()基于当前数组的一个或多项组建新数组。接受一个或者两个参数.
+slice 基于当前数组的一个或多项组建新数组。接受一个或者两个参数.
 ```js
 var colors1 = ['red','green','yellow','blue','black'];
 //若只有一个参数，则返回从该参数指定位置到结束位置之间项的数组
@@ -190,7 +190,7 @@ var sum = number.reduceRight(function(prev, cur, index, array){
     return prev + cur;
 });    //15
 ```
-我们把 index 打印出来，你会发现，它的index 是从 1 开始的。
+我们把 index 打印出来，你会发现，它的 index 是从 1 开始的。
 
 ## 10. 伪数组
 - 什么是伪数组？ 
@@ -212,7 +212,7 @@ var sum = number.reduceRight(function(prev, cur, index, array){
         for(var i=0; i<array.length; i++) {
             if(!obj[array[i]]) {
                 result.push(array[i])
-                obj[array[i]] = array[i]
+                obj[array[i]] = true
             }
         }
         return result

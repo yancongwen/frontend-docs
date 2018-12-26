@@ -14,6 +14,7 @@
   * [jQuery](javascript/jquery.md)
   * [DOM 事件基础](javascript/dom事件.md)
   * [JS 运行机制及 Event Loop](javascript/EventLoop.md)
+  * [Cookie、Session、LocalStorage、SessionStorage](javascript/浏览器存储.md)
 
 * HTML && CSS
   * [CSS实现多行文字截断](html&css/CSS实现多行文字截断.md)

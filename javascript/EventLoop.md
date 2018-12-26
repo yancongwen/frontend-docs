@@ -68,3 +68,4 @@ JS是**单线程**，主线程执行完执行栈的任务后去检查异步的�
 ## 参考：
 - [JavaScript 运行机制详解：再谈Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 - [从setTimeout谈JavaScript运行机制](http://www.cnblogs.com/zichi/p/4604053.html)
+- [JavaScript是如何工作的：引擎，运行时和调用堆栈的概述！](https://segmentfault.com/a/1190000017352941)
