@@ -69,12 +69,12 @@ template = ~/.gitmessage
 npm install -g commitizen cz-conventional-changelog
 echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 ```
-全局模式下, 需要 ~/.czrc 配置文件, 为 commitizen 指定 Adapter
+全局模式下, 需要 ~/.czrc 配置文件, 为 commitizen 指定 Adapter 
 
 - 使用    
 &emsp;&emsp;如果全局安装过 commitizen, 那么在对应的项目中执行 `git cz` 或者 `npm run commit` 来替代 `git commit` 就可以了。执行命令后会进入一个交互式的命令环境，按照提示填写内容就可以了。如图：
 ![](https://img.yancongwen.cn/18-10-9/88873392.jpg)
-> 提示：如果你是在Windows中使用 Git Bash 执行命令，交互提示符并不工作。你必须通过 `winpty git cz` 启动这个命令。
+> 提示：如果你是在Windows中使用 Git Bash 执行命令，交互提示符并不工作。你必须通过 `winpty git cz` 启动这个命令；也可以通过修改 `.bashrc` 文件，添加别名：`alias git='winpty git'`
 
 ### 4.2 项目级安装和使用
 ```
