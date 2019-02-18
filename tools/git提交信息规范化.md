@@ -100,3 +100,4 @@ package.json中配置:
 - [优雅的提交你的 Git Commit Message](http://chuansong.me/n/2233522251134)
 - [https://github.com/commitizen/cz-cli](https://github.com/commitizen/cz-cli)
 - [git commit 规范指南](https://segmentfault.com/a/1190000009048911)
+- [详解使用git commit 工作流的标准姿势](https://www.imooc.com/article/43615)

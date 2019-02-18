@@ -147,7 +147,7 @@ newSayColorFun() // blue
     function f1(n) {
       return function () {
         return n++
-      };
+      }
     }
     var a1 = f1(1)
     a1() // 1

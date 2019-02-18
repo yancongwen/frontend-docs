@@ -192,15 +192,22 @@ var sum = number.reduceRight(function(prev, cur, index, array){
 ```
 我们把 index 打印出来，你会发现，它的 index 是从 1 开始的。
 
-## 10. 伪数组
+## 10. ES6 中新增的方法
+
+### Array.from()
+
+### Array.of()
+
+## 11. 伪数组
 - 什么是伪数组？ 
-    - 1. 有 0,1,2,3,4,5...n,length 这些 key 的对象；
+    - 1. 拥有一个 length 属性和若干索引属性的任意对象(有 0,1,2,3,4,5...n,length 这些 key 的对象)；
     - 2. 原型链中没有 Array.prototype；
+    - 3. 
 - 目前知道的伪数组有:
     - 1. 函数的`arguments`对象；
     - 2. `document.querySelectorAll('div')` 返回的节点的集合[NodeList](https://developer.mozilla.org/zh-CN/docs/Web/API/NodeList)；
 
-## 11. 数组去重
+## 12. 数组去重
 - 经典的一个面试题目：如何实现数组去重？：
     > 假设有数组 array = [1,5,2,3,4,2,3,1,3,4] 你要写一个函数 unique，使得 unique(array) 的值为 [1,5,2,3,4]。要求：不要做多重循环，只能遍历一次；请给出两种方案，一种能在 ES 5 环境中运行，一种能在 ES 6 环境中运行。
 - 答案
