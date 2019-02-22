@@ -24,6 +24,7 @@
   * [express](node/express.md)
   * [mongoose](node/mongoose.md)
   * [packages](node/packages.md)
+  * [CAS单点登录](node/CAS单点登录.md)
 
 * Vue
   * [Vue CLI 3 配置](vue/vue-cli3.md)
