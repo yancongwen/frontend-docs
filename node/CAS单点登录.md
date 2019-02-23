@@ -23,7 +23,7 @@ CAS (Central Authentication Service) 是耶鲁 Yale 大学发起的一个java开
 
 ## 三、 node 项目集成 CAS
 首先介绍一下项目架构，项目前端采用 Vue 开发，服务端采用 node + express 开发。项目最终上线部署时，前端打包后放在服务端的 `/public` 目录下，即采用 express 静态服务功能。        
-本来我还是已固有的思维，考虑在前端实现单点登录的集承，CAS 也提供了一些列的 Restful Api，然而当我去实现的时候一直没有头绪。然后想到了可否直接在服务端控制访问权限？于是网上搜索一番，终于找到了 [connect-cas2](https://github.com/TencentWSRD/connect-cas2) node 中间件，其实它就是 CAS Client 的 node 实现。connect-cas2 的使用也比较简单，直接抄文档示例就可以了。
+开始我还是固有的思维，考虑在前端实现单点登录的集承，用户登录不都是在前端做的吗，调用服务端接口，CAS 也提供了一些列的 Restful Api，然而当我去实现的时候却相当麻烦，还会有跨域的问题。然后想到了可否直接在服务端控制访问权限？于是网上搜索一番，终于找到了 [connect-cas2](https://github.com/TencentWSRD/connect-cas2) node 中间件，其实它就是 CAS Client 的 node 实现，正好符合我的项目场景。connect-cas2 的使用也比较简单，具体请看官方文档，直接抄文档示例就可以了。以下是主要代码：
 ```js
 var express = require('express');
 var ConnectCas = require('connect-cas2');
