@@ -47,6 +47,7 @@
   * [四大WebGIS地图引擎的对比选择](gis/四大webgis地图引擎的对比选择.md)
   * [解决WFS矢量要素重复加载问题](gis/解决WFS矢量要素重复加载问题.md)
   * [Geoserver中WFS服务的使用](gis/Geoserver中WFS服务的使用.md)
+  * [tippecanoe](gis/tippecanoe.md)
 
 * Tools
   * [git commit 规范化](tools/git提交信息规范化.md)
