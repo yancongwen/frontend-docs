@@ -62,10 +62,46 @@ console.log(2);
 上面代码的执行结果总是2，1，因为只有在执行完第二行以后，系统才会去执行"任务队列"中的回调函数。\
 需要注意的是，`setTimeout`只是将事件插入了"任务队列"，必须等到当前代码（执行栈）执行完，主线程才会去执行它指定的回调函数。要是当前代码耗时很长，有可能要等很久，所以并没有办法保证，回调函数一定会在`setTimeout`指定的时间执行。
 
-## 6. 总结
-JS是**单线程**，主线程执行完执行栈的任务后去检查异步的任务队列，如果异步事件触发，则将其加到主线程的执行栈。
+## 6. 一道题目
+```js
+setTimeout(() => console.log(1))
+new Promise((resolve,reject) => {
+    console.log(2)
+    for( var i=0; i<10000; i++ ){
+        i==9999 && resolve()
+    }
+    console.log(3)
+}).then(() => {
+    console.log(4)
+});
+console.log(5)
+// 为什么输出结果为 2 3 5 4 1,而不是 2 3 5 1 4
+```
+这个题目我纠结的一点是，为什么Promise的异步任务要比setTimeout的异步先执行，仅仅靠以上知识点是无法回答这个问题的。原来异步任务之间也是存在差异的，可分为微任务和宏任务。
+* macro-task（宏任务）：包括整体script代码，setInterval，setTimeout
+* micro-task（微任务）：promise ，process.nexttrick（nodejs的内容）     
+
+不同类型的任务会进入对应的event queue，比如setInterval，setTimeout会进入相同的event queue。事件循环的顺序决定js代码的执行顺序。进入整体代码（宏任务）后，开始第一次循环。接着执行所有的微任务。然后再从宏任务开始，找到其中一个任务队列执行完毕，再执行所有的微任务。
+分析一下以上代码中的代码执行顺序：
+* (1) 这段代码作为宏任务进入主线程，先遇到settimeout，那么将其回调函数分发到宏任务的event queue上;
+* (2) 接下来遇到promise，new promise立即执行，then函数分发到微任务的event queue中;
+* (3) 然后，整体script代码作为第一个宏任务执行结束，看看有哪些微任务，我们发现then在微任务event queue里，则执行;
+* (4) 第一轮循环事件结束，开始第二轮循环，当然是从宏任务的event queue开始，我们发现了宏任务event queue中的settimeout对应的回调函数，则立即执行
+
+
+
+## 7. 总结
+- Javascript是单线程的，所有的同步任务都会在主线程中执行;
+- 当主线程中的任务，都执行完之后，系统会 “依次” 读取任务队列里的事件。与之相对应的异步任务进入主线程，开始执行;
+- 异步任务之间，会存在差异，所以它们执行的优先级也会有区别。大致分为***微任务***（micro task，如：Promise、MutaionObserver等）和***宏任务***（macro task，如：setTimeout、setInterval、I/O等）；
+- Promise 执行器中的代码会被同步调用，但是回调是基于微任务的；
+- 宏任务的优先级高于微任务；
+- 每一个宏任务执行完毕都必须将当前的微任务队列清空；
+- 第一个 script 标签的代码是第一个宏任务；
+- 主线程会不断重复上面的步骤，直到执行完所有任务；
 
 ## 参考：
 - [JavaScript 运行机制详解：再谈Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 - [从setTimeout谈JavaScript运行机制](http://www.cnblogs.com/zichi/p/4604053.html)
 - [JavaScript是如何工作的：引擎，运行时和调用堆栈的概述！](https://segmentfault.com/a/1190000017352941)
+- [js基础进阶--promise和setTimeout执行顺序的问题](http://xiaolongwu.cn/2019/01/26/js%E5%9F%BA%E7%A1%80%E8%BF%9B%E9%98%B6--promise%E5%92%8CsetTimeout%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/#more)
