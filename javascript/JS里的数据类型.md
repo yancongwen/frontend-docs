@@ -8,6 +8,15 @@
 - 二进制：`0b11`
 - 八进制：`011`（后来 ES5 添加了 0o11 语法）
 - 十六进制：`0x11`
+```js
+// 判断是否为数字
+typeof value === 'number'
+// 判断是否为整数
+Number.isInteger(value)
+typeof value === 'number' && value%1 === 0
+parseInt(value, 10) === value
+Math.floor(value) === value
+```
 
 ## string
 - 空字符串： `''`
@@ -39,6 +48,11 @@ true or false
 - `object.key` 与 `object[key]` 不同
 - `delete object['key']`
 - `'key' in object` 用于判断是否存在这个 key
+
+```js
+// 判断是否为对象
+typeof value === 'object' && value !== null
+```
 
 ## symbol
 ES6中新增的一个类型，它是 JavaScript 语言的第七种数据类型，表示独一无二的值。

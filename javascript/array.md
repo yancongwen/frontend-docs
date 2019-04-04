@@ -34,11 +34,19 @@ alert(colors.length); //100
 ```
 
 ## 2. 检测数组：Array.isArray()
-使用`instanceof`操作符的问题在于它是假定只有一个全局执行环境。如果项目中使用了多个框架，就存在两个以上的全局执行环境，从而存在两个以上版本的Array构造函数。
+当检测Array实例时, `Array.isArray()` 优于 `instanceof`, 因为`Array.isArray()`能检测iframes。使用`instanceof`操作符的问题在于它是假定只有一个全局执行环境。如果项目中使用了多个框架，就存在两个以上的全局执行环境，从而存在两个以上版本的Array构造函数。
 为了解决这个问题，ECMASsript5新增了`Array.isArray()`。这个方法的目的是最终确定某个值到底是不是数组。
 ```js
 var bool = value instanceof Array;
 var bool = Array.isArray(value);
+```
+Polyfill:
+```js
+if (!Array.isArray) {
+  Array.isArray = function(arg) {
+    return Object.prototype.toString.call(arg) === '[object Array]';
+  }
+}
 ```
 
 ## 3. 转换方法：toLocaleString()、toString()、valueOf()、join()
@@ -81,7 +89,7 @@ function compare(a,b){
     }
 }
 //使用以上比较函数实现升序
-var array = [0,1,5,10,15];
+var array = [0,10,15,1,5];
 var result = array.sort(compare); //[0,1,5,10,15]
 // 上面的比较函数可以简化为：
 function compare(a,b){
@@ -194,9 +202,66 @@ var sum = number.reduceRight(function(prev, cur, index, array){
 
 ## 10. ES6 中新增的方法
 
-### Array.from()
+### 1. Array.from()
+`Array.from` 方法用于将两类对象转为真正的数组：伪数组对象和可遍历（iterable）对象（包括ES6新增的数据结构 Set 和 Map ）。
+```js
+let arrayLike = {
+    '0': 'a',
+    '1': 'b',
+    '2': 'c',
+    length: 3
+}
+// ES5
+var arr1 = [].slice.call(arrayLike) // ['a', 'b', ''c]
+// ES6
+var arr2 = Array.from(arrayLike) // ['a', 'b', ''c]
+```
+只要是部署了`Iterator`接口的数据结构，`Array.from` 都能将其转为数组。
+```js
+Array.from('hello') // ['h', 'e', 'l', 'l', 'o']
+// Set
+let nameSet = new Set(['a', 'b'])
+Array.from(nameSet) // ['a', 'b']
+```
 
-### Array.of()
+Polyfill:
+```js
+const toArray = (() => {
+    Array.from ? Array.from : obj => [].slice.call(obj)
+})()
+```
+
+### 2. Array.of()
+`Array.of` 方法用于将一组值转为数组。
+```js
+Array.of() // []
+Array.of(3,4,5) // [3,4,5]
+Array.of(3) // [3]
+Array.of(3).length // 3
+```
+这个方法的目的主要是弥补数组构造函数`Array()`的不足。因为参数个数的不同会导致`Array()`的行为有差异。
+```js
+Array() // []
+Array(3) // [ , , ]
+Array(3,4,5) // [3,4,5]
+```
+上面代码中，Array 方法没有参数、有1个参数、或3个参数时，返回结果不一样。只有参数不少于2个时，Array() 才会返回由参数组成的新数组。参数只有1个时，实际上是指定数组长度。Array.of 基本上可以替代 Array() 或 new Array()，并且不存在由于参数不同而导致的重载。它的行为非常统一。
+
+Polyfill:
+```js
+function ArrayOf() {
+    return [].slice.call(arguments)
+}
+```
+
+### 3. find() 和 findIndex()
+查找
+### 4. fill()
+填充
+### 5. copyWithin()
+
+### 6. includes()
+
 
 ## 11. 伪数组
 - 什么是伪数组？ 

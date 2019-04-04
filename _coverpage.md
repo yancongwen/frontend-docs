@@ -1,6 +1,6 @@
 ![logo](icon.svg)
 
-# Personal Frontend Summary <small>personal</small>
+# Frontend Development Summary <small>personal</small>
 
 > 个人 Web 开发技术总结
 
