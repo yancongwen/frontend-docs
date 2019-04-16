@@ -1,15 +1,18 @@
 # Geoeye-server APIs old
 
 ## /
+
 - / `GET`
 - /clean `ALL`
 
 ## auth
+
 - auth/login `POST`
 - auth/logout `ALL`
 - auth/chkuser `POST`
 
 ## datasource
+
 - datasource/list `GET`
 - datasource/groups `GET`
 - datasource/list/:group `GET`
@@ -25,7 +28,7 @@
 - datasource/readtable `GET`
 - datasource/readtable/:table `GET`
 - datasource/distinct `GET`
-- datasource/* `POST`
+- datasource/\* `POST`
 - datasource/json2table `POST`
 - datasource/csv2table `POST`
 - datasource/shp2table `POST`
@@ -41,6 +44,7 @@
 - datasource `GET`
 
 ## modelnode
+
 - modelnode/list `GET`
 - modelnode/list2 `GET`
 - modelnode/groups `GET`
@@ -48,7 +52,7 @@
 - modelnode/list2/:group `GET`
 - modelnode/get/:id `GET`
 - modelnode/types `GET`
-- modelnode/* `POST`
+- modelnode/\* `POST`
 - modelnode/add `POST`
 - modelnode/edit `POST`
 - modelnode/del `POST`
@@ -59,12 +63,13 @@
 - modelnode/reschedule `POST`
 
 ## publishnode
+
 - publishnode/list `GET`
 - publishnode/list2 `GET`
 - publishnode/list/:group `GET`
 - publishnode/list2/:group `GET`
 - publishnode/get/:id `GET`
-- publishnode/* `POST`
+- publishnode/\* `POST`
 - publishnode/add `POST`
 - publishnode/edit `POST`
 - publishnode/del `POST`
@@ -73,6 +78,7 @@
 - publishnode/view/:pubid `GET`
 
 ## res
+
 - res/list `GET`
 - res/get/:id `GET`
 - res/types `GET`
@@ -84,32 +90,37 @@
 - res/del `POST`
 
 ## scenenode
+
 - scenenode/list `GET`
 - scenenode/list2 `GET`
 - scenenode/list/:group `GET`
 - scenenode/list2/:group `GET`
 - scenenode/get/:id `GET`
-- scenenode/* `POST`
+- scenenode/\* `POST`
 - scenenode/add `POST`
 - scenenode/edit `POST`
 - scenenode/del `POST`
 
 ## service
+
 - service/wmts/getcapabilities `GET`
 
 ## tilelive
+
 !> 未实现
 
 - tilelive/:service/tiles/:x/:y/:z `GET`
 - tilelive/:service/vtiles/:x/:y/:z `GET`
 
 ## log
+
 !> 未实现
 
-- list/* `GET`
+- list/\* `GET`
 - log/list `GET`
 - log/file/:file `GET`
 - log/flush `GET`
 
 ## table
+
 !> 未实现

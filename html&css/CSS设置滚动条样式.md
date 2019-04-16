@@ -1,23 +1,27 @@
 # CSS 设置滚动条样式
-!> `::-webkit-scrollbar`只适用于 webkit 内核的浏览器 (谷歌Chrome, 苹果Safari、360、QQ、搜狗...)，本文也仅讨论适用于webkit 内核浏览器的设置方法。
+
+!> `::-webkit-scrollbar`只适用于 webkit 内核的浏览器 (谷歌 Chrome, 苹果 Safari、360、QQ、搜狗...)，本文也仅讨论适用于 webkit 内核浏览器的设置方法。
 
 定义滚动条样式就是设置伪元素和伪类样式。
 
-## 1、滚动条伪元素选择器（7个）
-| 数字 | 属性 | 解释 |
-| --- | --- | --- |
-| 1 | ::-webkit-scrollbar             | 滚动条整体部分（可以设置纵向滚动条宽度、横向滚动条高度） |
-| 2 | ::-webkit-scrollbar-button      | 滚动条两端的按钮（没有该属性默认无按钮 ） |
-| 3 | ::-webkit-scrollbar-track       | 滚动条轨道 |
-| 4 | ::-webkit-scrollbar-track-piece | 滚动条没有滑块的轨道部分 |
-| 5 | ::-webkit-scrollbar-thumb       | 滚动的滑块 |
-| 6 | ::-webkit-scrollbar-corner      | 当同时有垂直滚动条和水平滚动条时交汇的部分 |
-| 7 | ::-webkit-resizer               | 某些元素的corner部分的部分样式（例如textarea的可拖动按钮)|
+## 1、滚动条伪元素选择器（7 个）
+
+| 数字 | 属性                             | 解释                                                            |
+| ---- | -------------------------------- | --------------------------------------------------------------- |
+| 1    | ::-webkit-scrollbar              | 滚动条整体部分（可以设置纵向滚动条宽度、横向滚动条高度）        |
+| 2    | ::-webkit-scrollbar-button       | 滚动条两端的按钮（没有该属性默认无按钮  ）                      |
+| 3    | ::-webkit-scrollbar-track        |   滚动条轨道                                                    |
+| 4    | ::-webkit-scrollbar-track-piece  |   滚动条没有滑块的轨道部分                                      |
+| 5    | ::-webkit-scrollbar-thumb        |   滚动的滑块                                                    |
+| 6    | ::-webkit-scrollbar-corner       | 当同时有垂直滚动条和水平滚动条时交汇的部分                      |
+| 7    | ::-webkit-resizer                |   某些元素的 corner 部分的部分样式（例如 textarea 的可拖动按钮) |
 
 ![滚动条选择器](https://img.yancongwen.cn/18-11-25/33084573.jpg)
 
 ## 2、伪类
+
 伪类有点复杂，但是常用的只有前两个
+
 ```
 :horizontal  //horizontal伪类适用于任何水平方向上的滚动条
 :vertical  //vertical伪类适用于任何垂直方向的滚动条
@@ -31,8 +35,11 @@
 :corner-present  //corner-present伪类表示滚动条的角落是否存在。
 :window-inactive  //适用于所有滚动条，表示包含滚动条的区域，焦点不在该窗口的时候。
 ```
+
 ## 示例
+
 以下代码就是本页面的滚动条样式设置
+
 ```css
 ::-webkit-scrollbar {
   display: inline-block;
@@ -47,7 +54,7 @@
   border-radius: 4px;
 }
 :hover::-webkit-scrollbar-thumb {
-  background-color: rgba(28,70,100,1);
+  background-color: rgba(28, 70, 100, 1);
 }
 ::-webkit-scrollbar-thumb:horizontal {
   border-radius: 0;
@@ -55,6 +62,7 @@
 ```
 
 ## 参考
+
 - [MDN 文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::-webkit-scrollbar)
-- [css设置滚动条样式](https://blog.csdn.net/yerongtao/article/details/70171602)
-- [CSS3自定义滚动条样式 -webkit-scrollbar](http://www.xuanfengge.com/css3-webkit-scrollbar.html)
+- [css 设置滚动条样式](https://blog.csdn.net/yerongtao/article/details/70171602)
+- [CSS3 自定义滚动条样式 -webkit-scrollbar](http://www.xuanfengge.com/css3-webkit-scrollbar.html)

@@ -1,68 +1,80 @@
 <!-- docs/_sidebar.md -->
 
-* [概述](README.md)
+- [概述](README.md)
 
-* JavaScript
-  * [JS里的数据类型](javascript/JS里的数据类型.md) 
-  * [JS数据类型转换](javascript/JS数据类型转换.md) 
-  * [JS String](javascript/string.md) 
-  * [JS Array](javascript/array.md) 
-  * [JS Function](javascript/function.md) 
-  * [原型与原型链](javascript/原型与原型链.md) 
-  * [构造函数](javascript/构造函数.md) 
-  * [lodash](javascript/lodash.md)
-  * [jQuery](javascript/jquery.md)
-  * [DOM 事件基础](javascript/dom事件.md)
-  * [JS 运行机制及 Event Loop](javascript/EventLoop.md)
-  * [Cookie、Session、LocalStorage、SessionStorage](javascript/浏览器存储.md)
+- JavaScript
 
-* HTML && CSS
-  * [CSS实现多行文字截断](html&css/CSS实现多行文字截断.md)
-  * [CSS设置滚动条样式](html&css/CSS设置滚动条样式.md)
+  - [JS 里的数据类型](javascript/JS里的数据类型.md)
+  - [JS 数据类型转换](javascript/JS数据类型转换.md)
+  - [JS Array](javascript/array.md)
+  - [JS Function](javascript/function.md)
+  - [原型与原型链](javascript/原型与原型链.md)
+  - [构造函数](javascript/构造函数.md)
+  - [lodash](javascript/lodash.md)
+  - [jQuery](javascript/jquery.md)
+  - [DOM 事件基础](javascript/dom事件.md)
+  - [JS 运行机制及 Event Loop](javascript/EventLoop.md)
+  - [Cookie、Session、LocalStorage、SessionStorage](javascript/浏览器存储.md)
+  - [函数节流与防抖](javascript/函数节流与防抖.md)
 
-* Node.js
-  * [express](node/express.md)
-  * [mongoose](node/mongoose.md)
-  * [packages](node/packages.md)
-  * [CAS单点登录](node/CAS单点登录.md)
+- HTML && CSS
 
-* Vue
-  * [Vue CLI 3 配置](vue/vue-cli3.md)
-  * [Vue Router](vue/vue-router.md)
-  * [Vuex](vue/vuex.md)
-  * [Vue 之自定义事件](vue/vue之自定义事件.md)
+  - [CSS 实现多行文字截断](html&css/CSS实现多行文字截断.md)
+  - [CSS 设置滚动条样式](html&css/CSS设置滚动条样式.md)
 
-* WebDev Summary
-  * [路径问题](webdev_summary/路径.md)
-  * [http网络请求参数中带有特殊符号](webdev_summary/http网络请求参数中带有特殊符号.md)
-  * [缓存(cache)](webdev_summary/cache.md)
-  * [浏览器渲染过程](webdev_summary/浏览器渲染过程.md)
-  * [移动端适配](webdev_summary/移动端适配.md)
-  * [跨域及常见解决方案](webdev_summary/跨域及常见解决方案.md)
+- WebDev Summary
+
+  - [路径问题](webdev_summary/路径.md)
+  - [http 网络请求参数中带有特殊符号](webdev_summary/http网络请求参数中带有特殊符号.md)
+  - [缓存(cache)](webdev_summary/cache.md)
+  - [浏览器渲染过程](webdev_summary/浏览器渲染过程.md)
+  - [移动端适配](webdev_summary/移动端适配.md)
+  - [跨域及常见解决方案](webdev_summary/跨域及常见解决方案.md)
+
+- Node.js
+
+  - [express](node/express.md)
+  - [mongoose](node/mongoose.md)
+  - [packages](node/packages.md)
+  - [CAS 单点登录](node/CAS单点登录.md)
+
+- Vue
+
+  - [Vue Router](vue/vue-router.md)
+  - [Vuex](vue/vuex.md)
+  - [Vue 之自定义事件](vue/vue之自定义事件.md)
 
 * Datas Sructure && Algorithm
-  * [寻找最长回文字符串](datastructure_algorithm/寻找最长回文字符串.md)
 
-* GIS
-  * [四大WebGIS地图引擎的对比选择](gis/四大webgis地图引擎的对比选择.md)
-  * [解决WFS矢量要素重复加载问题](gis/解决WFS矢量要素重复加载问题.md)
-  * [Geoserver中WFS服务的使用](gis/Geoserver中WFS服务的使用.md)
-  * [tippecanoe](gis/tippecanoe.md)
-
-* Tools
-  * [git commit 规范化](tools/git提交信息规范化.md)
-  * [git相关](tools/git相关.md)
-  * [webpack](tools/webpack.md)
-
-* Work
-  * [geoeye server api old](work/geoeye-server-api.md)
-
-* 随笔
-  * [Todo](随笔/todo.md)
-  * [待消化的文章](随笔/文章.md)
+  - [寻找最长回文字符串](datastructure_algorithm/寻找最长回文字符串.md)
 
 * 数据库
-  * [Mongodb](database/mongodb.md)
+
+  - [Mongodb](database/mongodb.md)
+
+* GIS
+
+  - [四大 WebGIS 地图引擎的对比选择](gis/四大webgis地图引擎的对比选择.md)
+  - [解决 WFS 矢量要素重复加载问题](gis/解决WFS矢量要素重复加载问题.md)
+  - [Geoserver 中 WFS 服务的使用](gis/Geoserver中WFS服务的使用.md)
+  - [矢量切片工具：tippecanoe](gis/tippecanoe.md)
+
+* Tools
+
+  - [git commit 规范化](tools/git提交信息规范化.md)
+  - [git 相关](tools/git相关.md)
+  - [webpack](tools/webpack.md)
+  - [linux 常用命令](tools/linux命令.md)
+  - [测试工具](tools/测试.md)
+
+* Work
+
+  - [geoeye server api old](work/geoeye-server-api.md)
+
+* 随笔
+
+  - [Todo](随笔/todo.md)
+  - [待消化的文章](随笔/文章.md)
 
 * 翻译
 
