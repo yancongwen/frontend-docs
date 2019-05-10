@@ -7,3 +7,4 @@ css 技巧
 碎片化的知识：
 
 - white-space: pre; 允许换行符
+- user-select: none; 禁止选择文字

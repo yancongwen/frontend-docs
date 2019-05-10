@@ -3,8 +3,33 @@
 #### ssh 登录
 
 ```sh
+ssh -p 22 username@192.168.1.100
 ssh [-p 非标准端口] 账号@IP
 ```
+
+-p 22 指定连接服务器的 22 号端口，22 端口是 ssh 的默认端口，可以省略，有些服务器为了安全起见为改为其他端口，连接这些服务器需要显式地指定端口号。
+
+#### ssh 免密码登录
+
+ssh 无密码登录的原理是采用非对称加密进行通信，首先客户端生成一对公钥和私钥，然后将公钥拷贝到服务器上。命令如下：
+
+```sh
+ssh-copy-id username@192.168.1.100
+```
+
+完成公钥拷贝后，之后再次登录服务器就不需要密码了：
+
+```sh
+ssh username@192.168.1.100
+```
+
+如果我们只需要登录到服务器上执行一两个简单的命令，此时我们可以在后面添加一些需要在服务器上执行的命令：
+
+```sh
+ssh username@192.168.1.100 "ls ~"
+```
+
+这种方式称作 non-interactive 模式，命令在服务上执行完后会立刻退出登录。
 
 #### tar
 
@@ -17,14 +42,28 @@ tar zxvf [文件名.tar.gz] -C [目标文件夹]
 
 #### 文件上传下载
 
-```sh
-// 从服务器下载
-scp username@serverIp:/path/filename  ~/local_dir（本地目录）
-// 示例：将47.100.63.15服务器上root用户中~/upload/weiyi.tar.gz下载至本地~/local_dir目录中
-scp root@47.100.63.15:~/upload/weiyi.tar.gz ~/local_dir
+scp 从本地拷贝文件到服务器的命令如下：
 
-// 上传到服务器
-scp /path/filename username@serverIp:/path
+```sh
+scp -P 22 -r src username@192.168.1.100:~/projects
 // 示例：将当前路径下的weiyi.tar.gz 上传至服务器47.100.63.15中root用户中~/upload文件夹
 scp weiyi.tar.gz root@47.100.63.15:~/upload
 ```
+
+scp 是使用 -P 来指定端口号的，这点与 ssh 不同；-r 表示拷贝子文件夹，对于文件夹拷贝很有用；src 是待拷贝的文件，~/projects 是拷贝到服务器上的位置。
+如果要从服务器将文件拷贝到本机，只需要调换下文件位置：
+
+```sh
+scp -P 22 -r username@192.168.1.100:~/projects ~/local_dir（本地目录）
+// 示例：将47.100.63.15服务器上root用户中~/upload/weiyi.tar.gz下载至本地~/local_dir目录中
+scp root@47.100.63.15:~/upload/weiyi.tar.gz ~/local_dir
+```
+
+如果要拷贝的文件夹里面有很多小文件，建议先压缩一下再拷贝，压缩之后传输会快一些，但是我们最后还需要登录到服务器上解压压缩包，操作上麻烦一些。那有没有传输快、操作也简单的远程拷贝方式呢？
+在前面的 ssh 无密码登录章节，我们知道可以使用 non-interactive 模式执行一些临时命令，那么我们可以结合 linux 的管道操作，在客户端压缩，在服务器解压：
+
+```sh
+tar zcf - src | ssh username@192.168.1.100 "tar zxf - -C ~/projects"
+```
+
+从上面的命令可以看出，其实我们并不需要 scp 就可以实现文件远程拷贝。实际上，scp 只是对 ssh 的一个包装而已。
