@@ -10,6 +10,7 @@
   - [JS Function](javascript/function.md)
   - [原型与原型链](javascript/原型与原型链.md)
   - [构造函数](javascript/构造函数.md)
+  - [JS 中的继承](javascript/继承.md)
   - [lodash](javascript/lodash.md)
   - [jQuery](javascript/jquery.md)
   - [DOM 事件基础](javascript/dom事件.md)
