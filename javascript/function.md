@@ -153,6 +153,7 @@ newSayColorFun() // blue
   - 隐藏一个变量，外部无法直接访问这个变量
   - 让这些变量始终保持在内存中
   - 封装对象的私有属性和私有方法
+  - 使用闭包可以在 JavaScript 中模仿块级作用域（JavaScript 本身没有块级作用域的概念）
   ```js
   function f1(n) {
     return function() {
