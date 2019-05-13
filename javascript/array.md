@@ -143,6 +143,8 @@ var colors3 = colors1.slice(1, 4) //['green','yellow','blue']
 var colors4 = colors1.slice(-4, -1) //['green','yellow','blue']
 //若第二个参数小于第一个参数，则返回空数组
 var colors5 = colors1.slice(2, 1) //[]
+// 若没有传参，则返回原数组，相当于对原数组进行了一次浅拷贝
+var colors6 = colors1.slice() // ['red', 'green', 'yellow', 'blue', 'black']
 ```
 
 - `splice()`：拼接数组，对原数组操作\
