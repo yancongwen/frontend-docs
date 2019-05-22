@@ -4,10 +4,11 @@
 
 - JavaScript
 
-  - [JS 里的数据类型](javascript/JS里的数据类型.md)
+  - [JS 数据类型](javascript/JS里的数据类型.md)
   - [JS 数据类型转换](javascript/JS数据类型转换.md)
   - [JS Array](javascript/array.md)
   - [JS Function](javascript/function.md)
+  - [JS String](javascript/string.md)
   - [原型与原型链](javascript/原型与原型链.md)
   - [构造函数](javascript/构造函数.md)
   - [JS 中的继承](javascript/继承.md)
@@ -15,10 +16,11 @@
   - [jQuery](javascript/jquery.md)
   - [DOM 事件基础](javascript/dom事件.md)
   - [JS 运行机制及 Event Loop](javascript/EventLoop.md)
-  - [Cookie、Session、LocalStorage、SessionStorage](javascript/浏览器存储.md)
+  - [浏览器存储](javascript/浏览器存储.md)
   - [函数节流与防抖](javascript/函数节流与防抖.md)
   - [变量、作用域和内存问题总结](javascript/变量作用域和内存问题.md)
   - [JS 中的对象遍历](javascript/js对象的遍历.md)
+  - [函数尾调用优化](javascript/尾调用优化.md)
 
 - HTML && CSS
 
@@ -30,7 +32,7 @@
 
   - [路径问题](webdev_summary/路径.md)
   - [http 网络请求参数中带有特殊符号](webdev_summary/http网络请求参数中带有特殊符号.md)
-  - [缓存(cache)](webdev_summary/cache.md)
+  - [浏览器缓存机制](webdev_summary/cache.md)
   - [浏览器渲染过程](webdev_summary/浏览器渲染过程.md)
   - [移动端适配](webdev_summary/移动端适配.md)
   - [跨域及常见解决方案](webdev_summary/跨域及常见解决方案.md)
