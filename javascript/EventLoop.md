@@ -98,8 +98,8 @@ console.log(5)
 
 这个题目我纠结的一点是，为什么 Promise 的异步任务要比 setTimeout 的异步先执行，仅仅靠以上知识点是无法回答这个问题的。原来异步任务之间也是存在差异的，可分为微任务和宏任务。
 
-- macro-task（宏任务）：包括整体 script 代码，setInterval，setTimeout
-- micro-task（微任务）：promise ，process.nexttrick（nodejs 的内容）
+- macro-task（宏任务）：包括整体 script 代码、setInterval、setTimeout、setImmediate、 I/O 操作、UI 渲染等
+- micro-task（微任务）：promise、process.nexttrick、MutationObserver
 
 不同类型的任务会进入对应的 event queue，比如 setInterval，setTimeout 会进入相同的 event queue。事件循环的顺序决定 js 代码的执行顺序。进入整体代码（宏任务）后，开始第一次循环。接着执行所有的微任务。然后再从宏任务开始，找到其中一个任务队列执行完毕，再执行所有的微任务。
 分析一下以上代码中的代码执行顺序：
