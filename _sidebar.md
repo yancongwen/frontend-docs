@@ -19,9 +19,9 @@
   - [浏览器存储](javascript/浏览器存储.md)
   - [函数节流与防抖](javascript/函数节流与防抖.md)
   - [变量、作用域和内存问题总结](javascript/变量作用域和内存问题.md)
-  - [JS 中的对象遍历](javascript/js对象的遍历.md)
+  - [JS 中的对象遍历](javascript/JS对象遍历.md)
   - [函数尾调用优化](javascript/尾调用优化.md)
-
+  - [JS 模块机制](javascript/JS模块机制.md)
 - HTML && CSS
 
   - [CSS 实现多行文字截断](html&css/CSS实现多行文字截断.md)

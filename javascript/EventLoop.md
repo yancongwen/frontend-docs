@@ -8,7 +8,7 @@ JavaScript 语言的一大特点就是单线程，也就是说，同一个时间
 
 ## 2. 任务队列
 
-单线程：所有任务需要排队，前一个任务结束，才会执行后一个任务。如果排队是因为计算量大，CPU 忙不过来，倒也算了，但是很多时候 CPU 是闲着的，因为 IO 设备（输入输出设备）很慢（比如 Ajax 操作从网络读取数据），不得不等着结果出来，再往下执行。于是，所有任务可以分成两种，一种是 **同步任务（synchronous）**，另一种是 **异步任务（asynchronous）**。同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步任务指的是，不进入主线程、而进入“任务队列”（task queue）的任务，只有“任务队列”通知主线程，某个异步任务可以执行了，该任务才会进入主线程执行。具体来说，异步执行的运行机制如下。（同步执行也是如此，因为它可以被视为没有异步任务的异步执行。）
+单线程：所有任务需要排队，前一个任务结束，才会执行后一个任务。如果排队是因为计算量大，CPU 忙不过来，倒也算了，但是很多时候 CPU 是闲着的，因为 IO 设备（输入输出设备）很慢（比如 Ajax 操作从网络读取数据），不得不等着结果出来，再往下执行。于是，所有任务可以分成两种，一种是 **同步任务（synchronous）**，另一种是 **异步任务（asynchronous）**。同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步任务指的是，不进入主线程、而进入“任务队列”（task queue）的任务，只有“任务队列”通知主线程，某个异步任务可以执行了，该任务才会进入主线程执行。具体来说，异步执行的运行机制如下。
 
 - 1、所有同步任务都在主线程上执行，形成一个执行栈（execution context stack）。
 - 2、主线程之外，还存在一个"任务队列"（task queue）。只要异步任务有了运行结果，就在"任务队列"之中放置一个事件。
@@ -96,25 +96,25 @@ console.log(5)
 // 为什么输出结果为 2 3 5 4 1,而不是 2 3 5 1 4
 ```
 
-这个题目我纠结的一点是，为什么 Promise 的异步任务要比 setTimeout 的异步先执行，仅仅靠以上知识点是无法回答这个问题的。原来异步任务之间也是存在差异的，可分为微任务和宏任务。
+这个题目我纠结的一点是，为什么 `Promise` 的异步任务要比 `setTimeout` 的异步先执行，仅仅靠以上知识点是无法回答这个问题的。原来异步任务之间也是存在差异的，可分为微任务和宏任务。
 
-- macro-task（宏任务）：包括整体 script 代码、setInterval、setTimeout、setImmediate、 I/O 操作、UI 渲染等
-- micro-task（微任务）：promise、process.nexttrick、MutationObserver
+- `macro-task`（宏任务）：包括整体 script 代码、`setInterval`、`setTimeout`、`setImmediate`、 I/O 操作、UI 渲染等
+- `micro-task`（微任务）：`Promise`、`process.nextTick`、`MutationObserver`
 
-不同类型的任务会进入对应的 event queue，比如 setInterval，setTimeout 会进入相同的 event queue。事件循环的顺序决定 js 代码的执行顺序。进入整体代码（宏任务）后，开始第一次循环。接着执行所有的微任务。然后再从宏任务开始，找到其中一个任务队列执行完毕，再执行所有的微任务。
+不同类型的任务会进入对应的 event queue，比如 `setInterval`，`setTimeout` 会进入相同的 event queue。事件循环的顺序决定 js 代码的执行顺序。进入整体代码（宏任务）后，开始第一次循环。接着执行当前产生的所有微任务。然后再从宏任务开始，找到其中一个任务队列执行完毕，再执行所有的微任务。
 分析一下以上代码中的代码执行顺序：
 
-- (1) 这段代码作为宏任务进入主线程，先遇到 settimeout，那么将其回调函数分发到宏任务的 event queue 上;
-- (2) 接下来遇到 promise，new promise 立即执行，then 函数分发到微任务的 event queue 中;
-- (3) 然后，整体 script 代码作为第一个宏任务执行结束，看看有哪些微任务，我们发现 then 在微任务 event queue 里，则执行;
-- (4) 第一轮循环事件结束，开始第二轮循环，当然是从宏任务的 event queue 开始，我们发现了宏任务 event queue 中的 settimeout 对应的回调函数，则立即执行
+- (1) 这段代码作为宏任务进入主线程，先遇到 `setTimeout`，那么将其回调函数分发到宏任务的 event queue 上;
+- (2) 接下来遇到 `Promise`，`new Promise` 立即执行，`then` 函数分发到微任务的 event queue 中;
+- (3) 然后，整体 script 代码作为第一个宏任务执行结束，看看有哪些微任务，我们发现 `then `在微任务 event queue 里，则执行;
+- (4) 第一轮循环事件结束，开始第二轮循环，当然是从宏任务的 event queue 开始，我们发现了宏任务 event queue 中的 `setTimeout` 对应的回调函数，则立即执行
 
 ## 7. 总结
 
 - Javascript 是单线程的，所有的同步任务都会在主线程中执行;
 - 当主线程中的任务，都执行完之后，系统会 “依次” 读取任务队列里的事件。与之相对应的异步任务进入主线程，开始执行;
-- 异步任务之间，会存在差异，所以它们执行的优先级也会有区别。大致分为**_微任务_**（micro task，如：Promise、MutaionObserver 等）和**_宏任务_**（macro task，如：setTimeout、setInterval、I/O 等）；
-- Promise 执行器中的代码会被同步调用，但是回调是基于微任务的；
+- 异步任务之间，会存在差异，所以它们执行的优先级也会有区别。大致分为**_微任务_**（micro task，如：`Promise`、`MutaionObserver`、`process.nextTick` 等）和**_宏任务_**（macro task，如：`setTimeout`、`setInterval`、I/O 等）；
+- `Promise` 执行器中的代码会被同步调用，但是回调是基于微任务的；
 - 宏任务的优先级高于微任务；
 - 每一个宏任务执行完毕都必须将当前的微任务队列清空；
 - 第一个 script 标签的代码是第一个宏任务；
@@ -126,3 +126,4 @@ console.log(5)
 - [从 setTimeout 谈 JavaScript 运行机制](http://www.cnblogs.com/zichi/p/4604053.html)
 - [JavaScript 是如何工作的：引擎，运行时和调用堆栈的概述！](https://segmentfault.com/a/1190000017352941)
 - [js 基础进阶--promise 和 setTimeout 执行顺序的问题](http://xiaolongwu.cn/2019/01/26/js%E5%9F%BA%E7%A1%80%E8%BF%9B%E9%98%B6--promise%E5%92%8CsetTimeout%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/#more)
+- [从多线程角度来看 Event Loop](https://mp.weixin.qq.com/s/DLunwkzknoQ0tczLHuqpHg)
