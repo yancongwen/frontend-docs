@@ -109,3 +109,4 @@ Service Worker 是一种独立于主线程之外的 Javascript 线程。它脱�
 
 - [一文读懂前端缓存](https://mp.weixin.qq.com/s/e42vFNPPxt7zcd1N0Li7pg)
 - [前端性能优化原理与实践](https://juejin.im/book/5b936540f265da0a9624b04b/section/5b9ba651f265da0ac726e5de)
+- [浏览器缓存机制、http缓存头](https://blog.csdn.net/xiaozhuo_tang/article/details/78300855)

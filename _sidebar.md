@@ -84,12 +84,12 @@
   - [待消化的文章](随笔/文章.md)
 
 *  面向面试
-    <!-- - [面试记录](webdev_summary/面试记录.md) -->
-    - [面试题目总结（一）](webdev_summary/面试篇一.md)
-    - [面试题目总结（二）](webdev_summary/面试篇二.md)
-    - [面试题目总结（三）](webdev_summary/面试篇三.md)
-    - [面试题目总结（四）](webdev_summary/面试篇四.md)
-    - [面试题目总结（五）](webdev_summary/面试篇五.md)
+  <!-- - [面试记录](Interview/面试记录.md) -->
+  - [面试题目总结（一）](Interview/面试篇一.md)
+  - [面试题目总结（二）](Interview/面试篇二.md)
+  - [面试题目总结（三）](Interview/面试篇三.md)
+  - [面试题目总结（四）](Interview/面试篇四.md)
+  - [面试题目总结（五）](Interview/面试篇五.md)
 
 * 翻译
 

@@ -1,7 +1,9 @@
 # Virtual DOM
+> Virtual DOM 可以说是现代前端开发的基石，本文以`snabbdom.js`为例，介绍了`Virtual DOM`和`Diff`算法的基本思想。
 
 ## 1、What
-Virtual DOM 是一种用JS对象表示DOM的一种技术；是一种开发思想，用一个简单的对象去代替复杂的 DOM 对象。DOM 就是文档树，在 web 开发中通常指 HTML 对应的渲染树，广义的 DOM 也可以指 Android 中的 XML 布局对应的控件树，也可以是指小程序开发中的 WXML，DOM 操作就是指直接操作渲染树（或控件树）。我们写的HTML也好、Vue中的模板也好、React中的JSX也好，都可以转换为虚拟DOM表达，然后再渲染。
+Virtual DOM 是一种用JS对象表示DOM的一种技术；是一种开发思想，用一个简单的对象去代替复杂的 DOM 对象。
+DOM 就是文档树，在 web 开发中通常指 HTML 对应的渲染树，广义的 DOM 也可以指 Android 中的 XML 布局对应的控件树，也可以是指小程序开发中的 WXML，DOM 操作就是指直接操作渲染树（或控件树）。我们写的HTML也好、Vue中的模板也好、React中的JSX也好，都可以转换为虚拟DOM表达，然后再渲染。
 
 ## 2、Why
 #### 过去开发中的痛点
@@ -11,7 +13,7 @@ Virtual DOM 是一种用JS对象表示DOM的一种技术；是一种开发思想
 
 > 把 DOM 和 ECMAScript 各自想象成一个岛屿，它们之间用收费桥梁连接。ECMAScript 每次访问 DOM，都要经过这座桥，并交纳“过桥费”，访问 DOM 的次数越多，费用也就越高。因此，推荐的做法是尽量减少过桥的次数，努力呆在 ECMAScript 岛上。  ——《高性能JavaScript》
 
-- 减少跨界过桥次数，合并操作
+来看下面的示例：示例中方法一频繁操作DOM，示例二中将DOM操作进行了合并，只需执行一次真正的DOM操作，明显，方式二性能更优。
 
 ```js
 function updateElement() {
@@ -33,22 +35,23 @@ function updateElement2() {
 let start = new Date().getTime()
 updateElement()
 let end = new Date().getTime()
-console.log(end - start)
+console.log(end - start) // 1899
 
 start = new Date().getTime()
 updateElement2()
 end = new Date().getTime()
-console.log(end - start)
+console.log(end - start) // 1
 ```
 
 #### 虚拟DOM带来的好处
 - 对开发者友好，提升开发效率
 - 数据驱动，提供了一个视图中间层，一套代码，多端运行
-- 浏览器执行机制，减少DOM操作，减少回流重绘
+- 减少跨界过桥次数，合并操作，减少DOM操作，减少回流重绘
 - 很多时候并不是最优的操作，但它具有普适性，可在效率、可维护性之间达平衡
 
 ## 3、How
 
+以下是简要思想：
 ```js
 let newState = payloadToState(payload, previousState)
 let newVirtualNode = stateToVirtualNode(newState)
@@ -58,7 +61,8 @@ let newView = applyModifications(previousView, modifications)
 ```
 
 ## 4、snabbdom 源码分析
-> snabbdom 一个经典的虚拟 DOM 库，虽然核心代码只有 200 行，但是功能丰富，性能极佳，支持自定义模块拓展功能。vue的虚拟dom实现也是参考了snabbdom.js的实现。
+下面我们以经典的虚拟DOM库 snabbdom 为例，来深入剖析虚拟 DOM 的思想和 diff 算法。
+snabbdom 一个经典的虚拟 DOM 库，虽然核心代码只有 200 行，但是功能丰富，性能也不错，支持自定义模块拓展功能。vue的虚拟dom实现也是参考了snabbdom.js的实现。
 
 ```
 src
