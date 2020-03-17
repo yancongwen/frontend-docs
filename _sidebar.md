@@ -12,7 +12,6 @@
   - [原型与原型链](javascript/原型与原型链.md)
   - [构造函数](javascript/构造函数.md)
   - [JS 中的继承](javascript/继承.md)
-  - [lodash](javascript/lodash.md)
   - [jQuery](javascript/jquery.md)
   - [DOM 事件基础](javascript/dom事件.md)
   - [JS 运行机制及 Event Loop](javascript/EventLoop.md)
@@ -22,6 +21,7 @@
   - [JS 中的对象遍历](javascript/JS对象遍历.md)
   - [函数尾调用优化](javascript/尾调用优化.md)
   - [JS 模块机制](javascript/JS模块机制.md)
+  - [lodash](javascript/lodash.md)
 - HTML && CSS
 
   - [CSS 实现多行文字截断](html&css/CSS实现多行文字截断.md)
