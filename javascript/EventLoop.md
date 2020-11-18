@@ -96,7 +96,7 @@ console.log(5)
 // 为什么输出结果为 2 3 5 4 1,而不是 2 3 5 1 4
 ```
 
-这个题目我纠结的一点是，为什么 `Promise` 的异步任务要比 `setTimeout` 的异步先执行，仅仅靠以上知识点是无法回答这个问题的。原来异步任务之间也是存在差异的，可分为微任务和宏任务。
+这个题目我纠结的一点是，为什么 `Promise` 的异步任务要比 `setTimeout` 的异步先执行，仅仅靠以上知识点是无法回答这个问题的。原来异步任务之间也是存在差异的，可分为微任务和宏任务。宿主（浏览器）发起的任务称为宏观任务，JavaScript 引擎发起的任务称为微观任务。
 
 - `macro-task`（宏任务）：包括整体 script 代码、`setInterval`、`setTimeout`、`setImmediate`、 I/O 操作、UI 渲染等
 - `micro-task`（微任务）：`Promise`、`process.nextTick`、`MutationObserver`

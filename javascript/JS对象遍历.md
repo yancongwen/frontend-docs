@@ -61,7 +61,7 @@ alert(keys) //"constructor,name,age,job,sayName"
 
 for...in 遍历的是键名，而 for...of 遍历的是键值。
 
-一个数据结构只要部署了 Symbol.iterator 属性，就被视为具有 Iterator 接口，就可以使用 for...of 循环遍历它的成员。可以使用 for..of 循环的有：数组、Set、Map 结构以及类数组对象（arguments 对象、DOM NodeList 对象）、Generator 对象以及字符串。
+一个数据结构只要部署了 Symbol.iterator 属性，就被视为具有 Iterator 接口，就可以使用 for...of 循环遍历它的成员。可以使用 for..of 循环的有：Array、String、Map、Set、类数组对象（arguments 对象、DOM NodeList 对象）、Generator 对象。
 
 for...of 循环可以替代数组的 forEach 方法。
 
